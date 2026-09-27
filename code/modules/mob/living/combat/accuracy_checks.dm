@@ -121,9 +121,6 @@
 		return FALSE
 	if(!(mobility_flags & MOBILITY_STAND))
 		return FALSE
-	if(user.badluck(4))
-		badluckmessage(user)
-		return TRUE
 
 /proc/badluckmessage(mob/living/user)
 	var/static/list/usedp = list("Critical miss!", "Damn! Critical miss!", "No! Critical miss!", "It can't be! Critical miss!", "Xylix laughs at me! Critical miss!", "Bad luck! Critical miss!", "Curse creation! Critical miss!", "What?! Critical miss!")

@@ -1,0 +1,4 @@
+author: "ProbablyCarl"
+delete-after: True
+changes:
+  - bugfix: "Returned gutted functionality of Overt Heretic."
