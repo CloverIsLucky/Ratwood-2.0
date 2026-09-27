@@ -29,6 +29,7 @@ GLOBAL_LIST_INIT(roguetown_areas_typecache, typecacheof(list(/area/rogue/indoors
 	. = ..()
 	if(!ishuman(guy))
 		return
+	//Guard / town related stuff.
 	if((src.town_area == TRUE) && HAS_TRAIT(guy, TRAIT_GUARDSMAN) && !guy.has_status_effect(/datum/status_effect/buff/guardbuffone)) //man at arms
 		guy.apply_status_effect(/datum/status_effect/buff/guardbuffone)
 	if((src.tavern_area == TRUE) && HAS_TRAIT(guy, TRAIT_TAVERN_FIGHTER) && !guy.has_status_effect(/datum/status_effect/buff/barkeepbuff)) // THE FIGHTER
@@ -37,17 +38,24 @@ GLOBAL_LIST_INIT(roguetown_areas_typecache, typecacheof(list(/area/rogue/indoors
 		guy.apply_status_effect(/datum/status_effect/buff/wardenbuff)
 	if((src.cell_area == TRUE) && HAS_TRAIT(guy, TRAIT_DUNGEONMASTER) && !guy.has_status_effect(/datum/status_effect/buff/dungeoneerbuff)) // Dungeoneer
 		guy.apply_status_effect(/datum/status_effect/buff/dungeoneerbuff)
+	//Holy stuff. I swear.
 	if((src.holy_area == TRUE) && HAS_TRAIT(guy, TRAIT_VOTARY))//Top Church guys get a buff. Opposite to overt heretics.
 		guy.add_stress(/datum/stressevent/seeblessed)
 	if((src.holy_area == TRUE) && HAS_TRAIT(guy, TRAIT_HOLYWARRIOR))
 		guy.apply_status_effect(/datum/status_effect/debuff/holy_blessing)
+	//Second holy stuff. Not quite holy. Wow.
 	if((src.necra_area == TRUE) && !(guy.has_status_effect(/datum/status_effect/debuff/necrandeathdoorwilloss)||(guy.has_status_effect(/datum/status_effect/debuff/deathdoorwilloss)))) //Necra saps at wil
 		if(HAS_TRAIT(guy, TRAIT_SOUL_EXAMINE))
 			guy.apply_status_effect(/datum/status_effect/debuff/necrandeathdoorwilloss)
 		else
 			guy.apply_status_effect(/datum/status_effect/debuff/deathdoorwilloss)
+	//Unholy debuffs. RAAAAAA.
+	if((src.holy_area == TRUE) && HAS_TRAIT(guy, TRAIT_OVERTHERETIC))//Heretics are punished for walking in the Church with rites buffs.
+		guy.apply_status_effect(/datum/status_effect/debuff/overt_punishment)
+	//We don't use this I'm pretty sure but whatever.
 	if((src.viewing_area == TRUE) && !guy.has_status_effect(/datum/status_effect/buff/viewingbuff)) // unique buff when in an arena so you have a better view
 		guy.apply_status_effect(/datum/status_effect/buff/viewingbuff)
+	//The funny angry hoardmaster stuff.
 	if((src.hoardmaster_protected == TRUE))//Your greed consumes you.
 		message_admins("[guy.real_name]([key_name(guy)]) was dusted by the Hoardmaster, at [ADMIN_JMP(src)]")
 		log_admin("[guy.real_name]([key_name(guy)]) was dusted by the Hoardmaster")
