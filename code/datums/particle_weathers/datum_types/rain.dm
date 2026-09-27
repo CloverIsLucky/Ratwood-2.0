@@ -86,7 +86,7 @@
 		var/mob/living/humann= pick(viable_players)
 		var/turf/humann_turf = get_turf(humann)
 		var/area/A = get_area(humann)
-		if(humann.badluck(4) && istype(A, /area/rogue/outdoors))
+		if(humann.badluck(12) && istype(A, /area/rogue/outdoors)) ////Raised the value because funny :3
 			humann.Immobilize(0.5 SECONDS)
 			humann.apply_status_effect(/datum/status_effect/debuff/clickcd, 6 SECONDS)
 			humann.electrocute_act(1, src, 1, SHOCK_NOSTUN)
@@ -248,7 +248,7 @@
 		var/mob/living/humann= pick(viable_players)
 		var/turf/humann_turf = get_turf(humann)
 		var/area/A = get_area(humann)
-		if(humann.badluck(4) && istype(A, /area/rogue/outdoors))
+		if(humann.badluck(12) && istype(A, /area/rogue/outdoors)) //Raised the value because funny :3
 			humann.Immobilize(0.5 SECONDS)
 			humann.apply_status_effect(/datum/status_effect/debuff/clickcd, 6 SECONDS)
 			humann.electrocute_act(1, src, 1, SHOCK_NOSTUN)
