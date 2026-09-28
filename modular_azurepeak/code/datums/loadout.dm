@@ -126,6 +126,11 @@ GLOBAL_LIST_INIT(loadout_items, init_subtypes(/datum/loadout_item))
 	path = /obj/item/reagent_containers/glass/bottle/waterskin
 	triumph_cost = 2
 
+/datum/loadout_item/zigbox
+	name = "Zig box"
+	path = /obj/item/storage/belt/rogue/pouch/zigarrete/nicotine
+	triumph_cost = 5
+
 /datum/loadout_item/flint
 	name = "Flint"
 	path = /obj/item/flint
@@ -332,6 +337,10 @@ GLOBAL_LIST_INIT(loadout_items, init_subtypes(/datum/loadout_item))
 	name = "Duelist's Hat"
 	path = /obj/item/clothing/head/roguetown/duelhat
 
+/datum/loadout_item/beehood
+	name = "Beekeper's Hood"
+	path = /obj/item/clothing/head/roguetown/beekeeper
+
 /datum/loadout_item/hood
 	name = "Hood"
 	path = /obj/item/clothing/head/roguetown/roguehood
@@ -430,7 +439,7 @@ GLOBAL_LIST_INIT(loadout_items, init_subtypes(/datum/loadout_item))
 	path = /obj/item/clothing/cloak/templar/abyssor
 
 /datum/loadout_item/tabard/necra
-	name = "Abyssor Tabard"
+	name = "Necran Tabard"
 	path = /obj/item/clothing/cloak/templar/necra
 
 /datum/loadout_item/tabard/psydon
@@ -2640,3 +2649,25 @@ GLOBAL_LIST_INIT(loadout_items, init_subtypes(/datum/loadout_item))
 /datum/loadout_item/caparison/fogbeast/azure
 	name = "Ducal Caparison (Fogbeast)"
 	path = /obj/item/caparison/fogbeast/azure
+
+//Horsey gear :3
+
+/datum/loadout_item/horsey/head
+	name = "Horsey Head Bit"
+	path = /obj/item/clothing/head/roguetown/horsey
+
+/datum/loadout_item/horsey/mask
+	name = "Horsey Eye Blinders"
+	path = /obj/item/clothing/mask/rogue/horsey
+
+/datum/loadout_item/horsey/corsette
+	name = "Horsey Harness Corset"
+	path = /obj/item/clothing/suit/roguetown/armor/leather/studded/bikini/horsey
+
+/datum/loadout_item/horsey/gloves
+	name = "Horsey Arm Harness"
+	path = /obj/item/clothing/gloves/roguetown/leather/horsey
+
+/datum/loadout_item/horsey/shoes
+	name = "Horsey Leg Harness"
+	path = /obj/item/clothing/shoes/roguetown/boots/horsey
