@@ -31,6 +31,12 @@
 	for(var/mob/living/carbon/human/species/wildshape/shape as anything in subtypesof(/mob/living/carbon/human/species/wildshape))
 		.[shape::name] = shape
 
+/proc/init_lessershifts()
+	. = list()
+	for(var/mob/living/carbon/human/species/lessershift/shape as anything in subtypesof(/mob/living/carbon/human/species/lessershift))
+		.[shape::name] = shape
+
+
 /proc/init_charflaw_singletons()
 	. = list()
 	for (var/path in subtypesof(/datum/charflaw))
