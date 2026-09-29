@@ -1,0 +1,4 @@
+author: "ProbablyCarl"
+delete-after: True
+changes:
+  - rscdel: "Nukes Psydonite lock on Frei mercs. Additionally removes their crosses."
