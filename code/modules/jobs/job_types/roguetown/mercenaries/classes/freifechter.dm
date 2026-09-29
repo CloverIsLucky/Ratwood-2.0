@@ -5,7 +5,6 @@
 
 	outfit = /datum/outfit/job/roguetown/mercenary/freelancer
 	subclass_languages = list(/datum/language/aavnic)//Your character could not have possibly "graduated" without atleast some basic knowledge of Aavnic.
-	allowed_patrons = list(/datum/patron/old_god)
 	class_select_category = CLASS_CAT_AAVNR
 	category_tags = list(CTAG_MERCENARY)
 	cmode_music = 'sound/music/combat_fencer.ogg'
@@ -40,7 +39,6 @@
 	shoes = /obj/item/clothing/shoes/roguetown/boots/grenzelhoft/freifechter
 	gloves = /obj/item/clothing/gloves/roguetown/angle/grenzelgloves/freifechter
 	backr = /obj/item/storage/backpack/rogue/satchel/short
-	neck = /obj/item/clothing/neck/roguetown/psicross/reform
 	mask = /obj/item/clothing/mask/rogue/spectacles/duelist
 	backpack_contents = list(
 		/obj/item/roguekey/mercenary = 1,
@@ -71,7 +69,6 @@
 	cmode_music = 'sound/music/frei_lancer.ogg'
 	outfit = /datum/outfit/job/roguetown/mercenary/freelancer_lancer
 	subclass_languages = list(/datum/language/aavnic)//Your character could not have possibly "graduated" without atleast some basic knowledge of Aavnic.
-	allowed_patrons = list(/datum/patron/old_god)
 	class_select_category = CLASS_CAT_AAVNR
 	category_tags = list(CTAG_MERCENARY)
 	cmode_music = 'sound/music/frei_fencer.ogg'
@@ -105,7 +102,6 @@
 	shoes = /obj/item/clothing/shoes/roguetown/boots/grenzelhoft/freifechter
 	gloves = /obj/item/clothing/gloves/roguetown/angle/grenzelgloves/freifechter
 	backr = /obj/item/storage/backpack/rogue/satchel/short
-	neck = /obj/item/clothing/neck/roguetown/psicross/reform
 	mask = /obj/item/clothing/mask/rogue/spectacles/duelist
 	id = /obj/item/rogueweapon/katar/punchdagger/frei
 	backpack_contents = list(
@@ -131,7 +127,6 @@
 
 	outfit = /datum/outfit/job/roguetown/mercenary/freelancer_sabrist
 	subclass_languages = list(/datum/language/aavnic)//Your character could not have possibly "graduated" without atleast some basic knowledge of Aavnic.
-	allowed_patrons = list(/datum/patron/old_god)
 	class_select_category = CLASS_CAT_AAVNR
 	category_tags = list(CTAG_MERCENARY)
 	cmode_music = 'sound/music/frei_sabre.ogg'
@@ -168,7 +163,6 @@
 	gloves = /obj/item/clothing/gloves/roguetown/angle/grenzelgloves/freifechter
 	wrists = /obj/item/clothing/wrists/roguetown/bracers/jackchain	//Obsessed with arms-hands. Keeping them protected on-spawn.
 	backr = /obj/item/storage/backpack/rogue/satchel/short
-	neck = /obj/item/clothing/neck/roguetown/psicross/reform
 	mask = /obj/item/clothing/mask/rogue/spectacles/duelist
 	backpack_contents = list(
 		/obj/item/roguekey/mercenary = 1,
