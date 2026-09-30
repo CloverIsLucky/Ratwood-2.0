@@ -301,9 +301,9 @@
 	color_keys = 2
 	color_key_names = list("Tail", "Inner")
 
-/datum/sprite_accessory/tail/largestripped
-	name = "Large Stripped Tail"
-	icon_state = "largestripped"
+/datum/sprite_accessory/tail/largestriped
+	name = "Large Striped Tail"
+	icon_state = "largestriped"
 	color_keys = 2
 	color_key_names = list("Tail", "Stripes")
 
