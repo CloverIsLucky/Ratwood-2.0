@@ -196,6 +196,12 @@
 	color_keys = 2
 	color_key_names = list("Snout", "Inner")
 
+/datum/sprite_accessory/snout/owl
+	name = "Owl"
+	icon_state = "m_snout_owl"
+	color_keys = 2
+	color_key_names = list("Snout", "Inner")
+
 /datum/sprite_accessory/snout/otie
 	name = "Otie"
 	icon_state = "otie"
