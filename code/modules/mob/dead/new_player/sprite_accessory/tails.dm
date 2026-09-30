@@ -301,6 +301,12 @@
 	color_keys = 2
 	color_key_names = list("Tail", "Inner")
 
+/datum/sprite_accessory/tail/largestripped
+	name = "Large Stripped Tail"
+	icon_state = "largestripped"
+	color_keys = 2
+	color_key_names = list("Tail", "Stripes")
+
 /datum/sprite_accessory/tail/raccoon
 	name = "Raccoon"
 	icon_state = "raccoon"
@@ -398,7 +404,7 @@
 /datum/sprite_accessory/tail/owl
 	name = "Owl"
 	icon_state = "owl"
-	
+
 /datum/sprite_accessory/tail/pinecone
 	name = "Pinecone"
 	icon_state = "expi"

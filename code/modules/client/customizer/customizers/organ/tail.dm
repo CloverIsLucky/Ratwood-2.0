@@ -387,6 +387,7 @@
 		/datum/sprite_accessory/tail/scorpian,
 		/datum/sprite_accessory/tail/large_snake,
 		/datum/sprite_accessory/tail/large_snake_plain,
+		/datum/sprite_accessory/tail/largestripped,
 		/datum/sprite_accessory/tail/tailmaw,
 		/datum/sprite_accessory/tail/tailmaw2,
 		/datum/sprite_accessory/tail/tailmaw2_head,
