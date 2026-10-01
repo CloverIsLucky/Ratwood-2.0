@@ -101,25 +101,41 @@
 		L.mind.add_sleep_experience(/datum/skill/combat/firearms, L.STAINT * skill_multiplier)
 
 
-/**
- * General firearm effect, on strike.
- * You roll 1-12, and if it's higher than your CON, you're FUCKED.
- * Otherwise, applies a slowdown for beating the check.
- */
+/*
+Firearms adjusted to be shrilly.
+This isn't the rework I wanted but it's ok for now.
 
+The beat of 1-12 CON raised to 1-14 on RNG, or you're FUCKED.
+Rather than immob, though, it's 2 seconds of knockdown.
+You also get a hematoma, on top of base wounds when losing that check.
+That hematoma is primarily only really a consideration for the blunderbuss.
+Which is meant to apply a ton on impact. It'll paste no-armour characters.
+Given every single blunderbuss projectile is checked. Teehee.
+
+Additionally, we now apply staggered for already high stumble projectiles.
+That is to say, we do away with stumble strength being used for slowdown if it's high enough, instead applying staggered.
+So no stagger faffery with a blunderbuss, though standard rifles will apply it every hit. Blunderbuss is already strong enough.
+A reminder that staggered, at time of addition, is a slow of 50% (1.5 multiplicative slowdown) & -2SPD/PER/CON, for 10 seconds.
+
+ - Carl
+*/
 /obj/projectile/bullet/firearm/on_hit(atom/target, blocked = FALSE)
 	. = ..()
 	if(istype(target, /mob/living/carbon/human))
 		var/mob/living/carbon/human/M = target
-		var/list/screams = list("painscream", "paincrit")
-		var/check = rand(1, 12)//12CON or higher to beat this every time.
+		var/list/screams = list("painscream", "paincrit", "agony")
+		var/check = rand(1, 14)//Higher than 14CON to beat this every time.
 		if(isliving(target))
+			if(stumble_strength >= 4)//We only want this applied for standard projectiles.
+				M.apply_status_effect(/datum/status_effect/debuff/staggered)
+			else//Otherwise, fallback to that old application.
+				M.Slowdown(stumble_strength)
 			if(check > M.STACON)//Has to beat, not meet.
 				M.emote(screams)//MY INSIDES ARE ON THE OUTSIDE!!!
-				M.Knockdown(rand(15,30))
-				M.Immobilize(rand(30,60))
-			else
-				M.Slowdown(stumble_strength)
+				M.Knockdown(2 SECONDS)
+				var/obj/item/bodypart/BP = M.get_bodypart(def_zone)
+				BP.add_wound(/datum/wound/bruise/large)//Blunderbuss my beloved.
+				BP.update_disabled()
 
 //The actual pouches.
 /obj/item/quiver/bullet
