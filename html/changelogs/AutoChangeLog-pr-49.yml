@@ -1,0 +1,4 @@
+author: "ProbablyCarl"
+delete-after: True
+changes:
+  - rscadd: "MAA Dragoon. A firearm capable keepoid class. Additionally adjusts projectiles for firearms to make them more punchy."
