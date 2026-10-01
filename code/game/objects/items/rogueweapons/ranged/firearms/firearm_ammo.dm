@@ -116,8 +116,7 @@ Additionally, we now apply staggered for already high stumble projectiles.
 That is to say, we do away with stumble strength being used for slowdown if it's high enough, instead applying staggered.
 So no stagger faffery with a blunderbuss, though standard rifles will apply it every hit. Blunderbuss is already strong enough.
 A reminder that staggered, at time of addition, is a slow of 50% (1.5 multiplicative slowdown) & -2SPD/PER/CON, for 10 seconds.
-
- - Carl
+- Carl
 */
 /obj/projectile/bullet/firearm/on_hit(atom/target, blocked = FALSE)
 	. = ..()
