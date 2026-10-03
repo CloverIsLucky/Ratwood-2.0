@@ -307,6 +307,7 @@
 	H.dna.species.soundpack_m = new /datum/voicepack/male/knight()
 	var/datum/devotion/C = new /datum/devotion(H, H.patron)
 	C.grant_miracles(H, cleric_tier = CLERIC_T1, passive_gain = CLERIC_REGEN_WEAK, devotion_limit = CLERIC_REQ_1)
+	if(H.mind)
 		var/denominations = list("MAILLED DEVOTEE - T2 Miracles + Hauberk", "ACCUSTOMED IN HEAVY PLATES - Heavy Armor Training + Hauberk")
 		var/denomination_choice = input("Choose your GIFT, holy crusader.") as anything in denominations
 		switch(denomination_choice)
@@ -316,25 +317,26 @@
 	- yet you hold a longsword in one hand, and a clenched psycross in the other."))
 				C.grant_miracles(H, cleric_tier = CLERIC_T2, passive_gain = CLERIC_REGEN_MINOR, devotion_limit = CLERIC_REQ_2)
 				ADD_TRAIT(H, TRAIT_MEDIUMARMOR, TRAIT_GENERIC) 
-					if(H.mind)
-						if(istype(H?.patron, /datum/patron/old_god)) //Psydonics are special.
-							armor = /obj/item/clothing/suit/roguetown/armor/plate/half/fluted/ornate
-							H.adjust_skillrank_up_to(/datum/skill/misc/medicine, SKILL_LEVEL_NOVICE, TRUE)
-						else
-							armor = /obj/item/clothing/suit/roguetown/armor/chainmail/hauberk
+				if(H.mind)
+					if(istype(H?.patron, /datum/patron/old_god)) //Psydonics are special.
+						to_chat(H, span_warning("ENDURING, AS HE DOES."))
+						armor = /obj/item/clothing/suit/roguetown/armor/plate/half/fluted/ornate
+						H.adjust_skillrank_up_to(/datum/skill/misc/medicine, SKILL_LEVEL_NOVICE, TRUE)
+					else
+						armor = /obj/item/clothing/suit/roguetown/armor/chainmail/hauberk
 				H.adjust_skillrank_up_to(/datum/skill/magic/holy, SKILL_LEVEL_JOURNEYMAN, TRUE)
 			if("ACCUSTOMED IN HEAVY PLATES - Heavy Armor Training + Hauberk")
 				to_chat(H, span_warning("You are a holy knight, clad in maille and armed with steel. \
 	Where others of the clergy may have spent their free time studying scriptures, you devoted yourself towards fighting Psydonia's evils \
 	- a longsword in one hand, and a clenched psycross in the other."))
 				ADD_TRAIT(H, TRAIT_HEAVYARMOR, TRAIT_GENERIC) 
-					if(H.mind)
-						if(istype(H?.patron, /datum/patron/old_god)) //Psydonics are special.
-							H.adjust_skillrank_up_to(/datum/skill/misc/medicine, SKILL_LEVEL_APPRENTICE, TRUE)
-							armor = /obj/item/clothing/suit/roguetown/armor/chainmail/hauberk/ornate //Basically a bit more flavourful Knight Errant, so may as very well give HEAVYARMOR
-						else
-							armor = /obj/item/clothing/suit/roguetown/armor/chainmail/hauberk //You have the training, but you have to find an heavy armor.
-
+				if(H.mind)
+					if(istype(H?.patron, /datum/patron/old_god)) //Psydonics are special.
+						to_chat(H, span_warning("VEYLED, LIKE HIS MARTYRS."))
+						H.adjust_skillrank_up_to(/datum/skill/misc/medicine, SKILL_LEVEL_APPRENTICE, TRUE)
+						armor = /obj/item/clothing/suit/roguetown/armor/chainmail/hauberk/ornate //Basically a bit more flavourful Knight Errant, so may as very well give HEAVYARMOR
+					else
+						armor = /obj/item/clothing/suit/roguetown/armor/chainmail/hauberk //You have the training, but you have to find an heavy armor.
 		var/oaths = list("Cleric - Medicine & Mirth","Crusader - Silver Weapon")
 		var/oath_choice = input(H, "Choose your OATH.", "PROFESS YOUR BLESSINGS.") as anything in oaths
 		switch(oath_choice)
