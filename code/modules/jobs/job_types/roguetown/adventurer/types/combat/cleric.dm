@@ -223,9 +223,6 @@
 	or a silver longsword that gives Journeyman skills in Swordsmanship. Psydonics choose between two denominations instead."
 
 /datum/outfit/job/roguetown/adventurer/paladin/pre_equip(mob/living/carbon/human/H)
-	to_chat(H, span_warning("You are a holy knight, clad in maille and armed with steel. \
-	Where others of the clergy may have spent their free time studying scriptures, you devoted yourself towards fighting Psydonia's evils \
-	- a longsword in one hand, and a clenched psycross in the other."))
 	belt = /obj/item/storage/belt/rogue/leather
 	backl = /obj/item/storage/backpack/rogue/satchel
 	backr = /obj/item/rogueweapon/shield/iron
@@ -309,10 +306,13 @@
 			head = /obj/item/clothing/head/roguetown/helmet/heavy/bucket
 	H.dna.species.soundpack_m = new /datum/voicepack/male/knight()
 	var/datum/devotion/C = new /datum/devotion(H, H.patron)
-		var/denominations = list("MAILLED DEVOTEE - T2 Miracles + Hauberk", "HONEY?! WHERE IS MY PLATE ARMOR? - Heavy Armor Training + Hauberk")
+		var/denominations = list("MAILLED DEVOTEE - T2 Miracles + Hauberk", "ACCUSTOMED IN HEAVY PLATES - Heavy Armor Training + Hauberk")
 		var/denomination_choice = input("Choose your GIFT, holy crusader.") as anything in denominations
 		switch(denomination_choice)
 			if("MAILLED DEVOTEE - T2 Miracles + Hauberk")
+				to_chat(H, span_warning("You are a holy knight, clad in maille and armed with steel. \
+	Where other holy warriors have chosen to fight Psydonia's evils in heavy plates, you devoted yourself to be a bit more in tune with your god. \
+	- yet you dress yourself in maille, holding a longsword in one hand, and a clenched psycross in the other."))
 				C.grant_miracles(H, cleric_tier = CLERIC_T2, passive_gain = CLERIC_REGEN_MINOR, devotion_limit = CLERIC_REQ_2)
 				ADD_TRAIT(H, TRAIT_MEDIUMARMOR, TRAIT_GENERIC) 
 					if(H.mind)
@@ -322,7 +322,10 @@
 						else
 							armor = /obj/item/clothing/suit/roguetown/armor/chainmail/hauberk
 				H.adjust_skillrank_up_to(/datum/skill/magic/holy, SKILL_LEVEL_JOURNEYMAN, TRUE)
-			if("HONEY?! WHERE IS MY PLATE ARMOR? - Heavy Armor Training + Hauberk")
+			if("ACCUSTOMED IN HEAVY PLATES - Heavy Armor Training + Hauberk")
+				to_chat(H, span_warning("You are a holy knight, clad in maille and armed with steel. \
+	Where others of the clergy may have spent their free time studying scriptures, you devoted yourself towards fighting Psydonia's evils \
+	- a longsword in one hand, and a clenched psycross in the other."))
 				C.grant_miracles(H, cleric_tier = CLERIC_T1, passive_gain = CLERIC_REGEN_WEAK, devotion_limit = CLERIC_REQ_1)
 				ADD_TRAIT(H, TRAIT_HEAVYARMOR, TRAIT_GENERIC) 
 					if(H.mind)
@@ -340,7 +343,7 @@
 				beltl = /obj/item/reagent_containers/glass/bottle/rogue/healthpot //No needles or cloth, but a basic potion of lifeblood - similar to the Sorcerer's manna potion. Take the 'Physician's Apprentice' virtue for that, uncapped skills, and more.
 			if("Crusader - Silver Weapon")
 				var/crusaderweapon = list("Silver Longsword", "Silver Mace", "Silver Flail", "Silver Greatflail, 13 STR MIN", "Silver Spear", "Silver Axe", "Silver Whip", "Silver Urumi")
-				var/crusaderweapon_choice = input(H, "Choose your silver weapon, Crusader!") as anything in crusaderweapon
+				var/crusaderweapon_choice = input(H, "Choose your silver weapon, Holy Crusader!") as anything in crusaderweapon
 				switch(crusaderweapon_choice)
 					if("Silver Longsword")
 						H.adjust_skillrank_up_to(/datum/skill/combat/swords, SKILL_LEVEL_JOURNEYMAN, TRUE)
