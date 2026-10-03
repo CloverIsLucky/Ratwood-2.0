@@ -312,7 +312,7 @@
 			if("MAILLED DEVOTEE - T2 Miracles + Hauberk")
 				to_chat(H, span_warning("You are a holy knight, clad in maille and armed with steel. \
 	Where other holy warriors have chosen to fight Psydonia's evils in heavy plates, you devoted yourself to be a bit more in tune with your god. \
-	- yet you dress yourself in maille, holding a longsword in one hand, and a clenched psycross in the other."))
+	- yet you hold a longsword in one hand, and a clenched psycross in the other."))
 				C.grant_miracles(H, cleric_tier = CLERIC_T2, passive_gain = CLERIC_REGEN_MINOR, devotion_limit = CLERIC_REQ_2)
 				ADD_TRAIT(H, TRAIT_MEDIUMARMOR, TRAIT_GENERIC) 
 					if(H.mind)
