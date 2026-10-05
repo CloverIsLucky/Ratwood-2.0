@@ -308,14 +308,14 @@
 	var/datum/devotion/C = new /datum/devotion(H, H.patron)
 	C.grant_miracles(H, cleric_tier = CLERIC_T1, passive_gain = CLERIC_REGEN_WEAK, devotion_limit = CLERIC_REQ_1)
 	if(H.mind)
-		var/denominations = list("MAILLED DEVOTEE - T2 Miracles + Hauberk", "ACCUSTOMED IN HEAVY PLATES - Heavy Armor Training + Hauberk")
+		var/denominations = list("Path of the Devotee - Extra Miracles and Hauberk", "Path of the Holy Warrior - Heavy Armor Training and Hauberk")
 		var/denomination_choice = input("Choose your GIFT, holy crusader.") as anything in denominations
 		switch(denomination_choice)
-			if("MAILLED DEVOTEE - T2 Miracles + Hauberk")
+			if("Path of the Devotee - Extra Miracles and Hauberk")
 				to_chat(H, span_warning("You are a holy knight, clad in maille and armed with steel. \
 	Where other holy warriors have chosen to fight Psydonia's evils in heavy plates, you devoted yourself to be a bit more in tune with your god. \
-	- yet you hold a longsword in one hand, and a clenched psycross in the other."))
-				C.grant_miracles(H, cleric_tier = CLERIC_T2, passive_gain = CLERIC_REGEN_MINOR, devotion_limit = CLERIC_REQ_2)
+	- yet you hold a longsword in one hand, and a clenched amulet in the other."))
+				C.grant_miracles(H, cleric_tier = CLERIC_T2, passive_gain = CLERIC_REGEN_WEAK, devotion_limit = CLERIC_REQ_2)
 				ADD_TRAIT(H, TRAIT_MEDIUMARMOR, TRAIT_GENERIC) 
 				if(H.mind)
 					if(istype(H?.patron, /datum/patron/old_god)) //Psydonics are special.
@@ -325,7 +325,7 @@
 					else
 						armor = /obj/item/clothing/suit/roguetown/armor/chainmail/hauberk
 				H.adjust_skillrank_up_to(/datum/skill/magic/holy, SKILL_LEVEL_JOURNEYMAN, TRUE)
-			if("ACCUSTOMED IN HEAVY PLATES - Heavy Armor Training + Hauberk")
+			if("Path of the Holy Warrior - Heavy Armor Training and Hauberk")
 				to_chat(H, span_warning("You are a holy knight, clad in maille and armed with steel. \
 	Where others of the clergy may have spent their free time studying scriptures, you devoted yourself towards fighting Psydonia's evils \
 	- a longsword in one hand, and a clenched psycross in the other."))
